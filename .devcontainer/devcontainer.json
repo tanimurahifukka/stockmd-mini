@@ -1,0 +1,9 @@
+{
+  "name": "stockmd-mini sandbox",
+  "dockerComposeFile": "../docker-compose.yml",
+  "service": "app",
+  "workspaceFolder": "/app",
+  "forwardPorts": [],
+  "remoteUser": "root",
+  "postCreateCommand": "bash scripts/sandbox/doctor.sh || true"
+}

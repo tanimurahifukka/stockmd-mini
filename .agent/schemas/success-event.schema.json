@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "title": "success-event",
+  "type": "object",
+  "required": ["schema_version", "event_id", "ts", "event"],
+  "properties": {
+    "schema_version": {"type": "string"},
+    "event_id": {"type": "string"},
+    "ts": {"type": "string"},
+    "project": {"type": ["string", "null"]},
+    "event": {"const": "task_completed"},
+    "task_id": {"type": ["string", "null"]},
+    "module": {"type": ["string", "null"]},
+    "phase": {"type": ["string", "null"]},
+    "agent": {"type": ["string", "null"]},
+    "model": {"type": ["string", "null"]},
+    "elapsed_min": {"type": ["number", "null"]},
+    "commits_created": {"type": ["integer", "null"]},
+    "verifier_state": {"enum": ["passing", "failing", "unknown"]},
+    "verifier_passed": {"type": "array", "items": {"type": "string"}},
+    "success_pattern": {
+      "type": "object",
+      "properties": {
+        "what_worked": {"type": "string"},
+        "reusable_hint": {"type": "string"}
+      }
+    },
+    "lesson": {
+      "type": "object",
+      "properties": {
+        "lesson_candidate": {"type": "string"},
+        "lesson_scope": {"enum": ["instance", "project", "skill", "meta"]},
+        "promotion_candidate": {"type": ["string", "null"]}
+      }
+    }
+  }
+}

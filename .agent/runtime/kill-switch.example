@@ -1,0 +1,3 @@
+# Rename this file to `kill-switch` to signal the agent to stop.
+# Agents must check for this file at the top of every task loop
+# and exit cleanly if it is present.

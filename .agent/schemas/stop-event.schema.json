@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "title": "stop-event",
+  "type": "object",
+  "required": ["schema_version", "event_id", "ts", "event", "stop_category"],
+  "properties": {
+    "schema_version": {"type": "string"},
+    "event_id": {"type": "string"},
+    "ts": {"type": "string"},
+    "session_id": {"type": ["string", "null"]},
+    "run_id": {"type": ["string", "null"]},
+    "project": {"type": ["string", "null"]},
+    "event": {"const": "agent_stopped"},
+    "stop_category": {"type": "string"},
+    "stop_subcategory": {"type": ["string", "null"]},
+    "severity": {"enum": ["low", "medium", "high", "critical"]},
+    "confidence": {"type": "number"},
+    "task_id": {"type": ["string", "null"]},
+    "module": {"type": ["string", "null"]},
+    "phase": {"type": ["string", "null"]},
+    "verifier_state": {"enum": ["passing", "failing", "unknown"]},
+    "failed_verifier": {"type": ["string", "null"]},
+    "agent": {"type": ["string", "null"]},
+    "model": {"type": ["string", "null"]},
+    "context": {
+      "type": "object",
+      "properties": {
+        "what_agent_was_doing": {"type": "string"},
+        "what_went_wrong": {"type": "string"},
+        "agent_self_diagnosis": {"type": "string"}
+      }
+    },
+    "human_resolution": {
+      "type": "object",
+      "properties": {
+        "action": {"type": "string"},
+        "answer_summary": {"type": "string"},
+        "spec_updated": {"type": "boolean"},
+        "skill_updated": {"type": "boolean"},
+        "files_updated": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "lesson": {
+      "type": "object",
+      "properties": {
+        "lesson_candidate": {"type": "string"},
+        "lesson_scope": {"enum": ["instance", "project", "skill", "meta"]},
+        "promotion_candidate": {"type": ["string", "null"]},
+        "recommended_artifact": {"type": ["string", "null"]},
+        "expires_at": {"type": ["string", "null"]}
+      }
+    },
+    "privacy": {
+      "type": "object",
+      "properties": {
+        "contains_secret": {"type": "boolean"},
+        "contains_user_data": {"type": "boolean"},
+        "redaction_applied": {"type": "boolean"}
+      }
+    }
+  }
+}

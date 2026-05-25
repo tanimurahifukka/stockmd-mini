@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0",
+  "project": "stockmd-mini",
+  "agent": {
+    "name": null,
+    "model": null,
+    "session_id": null,
+    "started_at": null
+  },
+  "current_task": null,
+  "phase": "idle",
+  "last_event_id": null
+}

@@ -1,0 +1,59 @@
+{
+  "schema_version": "1.0",
+  "project": "stockmd-mini",
+  "generated_at": "2026-05-25T10:35:55+09:00",
+  "stack": "nextjs-supabase",
+  "resources": [
+    {
+      "name": "stocks",
+      "operations": [
+        "create",
+        "list",
+        "read",
+        "update",
+        "delete"
+      ]
+    },
+    {
+      "name": "lots",
+      "operations": [
+        "create",
+        "list",
+        "read",
+        "update",
+        "delete"
+      ]
+    },
+    {
+      "name": "suppliers",
+      "operations": [
+        "create",
+        "list",
+        "read",
+        "update",
+        "delete"
+      ]
+    },
+    {
+      "name": "purchase_orders",
+      "operations": [
+        "create",
+        "list",
+        "read",
+        "update",
+        "delete"
+      ]
+    },
+    {
+      "name": "nfc_tags",
+      "operations": [
+        "create",
+        "list",
+        "read",
+        "update",
+        "delete"
+      ]
+    }
+  ],
+  "non_resource_features": []
+}

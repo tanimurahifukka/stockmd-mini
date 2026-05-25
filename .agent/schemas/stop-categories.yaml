@@ -1,0 +1,71 @@
+# Stop categories for log_stop.py. Free-form YAML (no python yaml dep needed
+# at runtime — log_event.py only validates against this when invoked with
+# --strict; see validate_event_schema.py).
+
+stop_categories:
+  environment:
+    - connection_failure
+    - environment_failure
+    - dependency_failure
+    - docker_daemon_down
+    - docker_failure
+    - database_failure
+    - db_not_ready
+    - supabase_not_ready
+    - migration_failed
+    - seed_failed
+    - port_conflict
+    - network_unreachable
+    - app_health_failed
+    - docker_resource_pressure
+
+  tool:
+    - tool_failure
+    - mcp_failure
+    - bash_failure
+    - file_operation_failure
+
+  verifier:
+    - verifier_loop
+    - test_failure
+    - typecheck_failure
+    - crud_coverage_failure
+    - module_boundary_failure
+    - verifier_integrity_failure
+
+  specification:
+    - spec_ambiguity
+    - missing_resource_policy
+    - missing_deletion_policy
+    - missing_auth_policy
+    - missing_error_handling_policy
+    - inconsistent_docs
+
+  governance:
+    - human_gate
+    - permission_denied
+    - forbidden_operation
+    - boundary_violation
+    - secret_detected
+    - production_safety_block
+
+  agent_behavior:
+    - context_exhaustion
+    - agent_self_doubt
+    - infinite_yes
+    - hallucinated_assumption
+    - premature_completion
+    - over_planning
+    - repeated_wrong_fix
+
+  repository_state:
+    - unexpected_state
+    - git_dirty
+    - merge_conflict
+    - generated_file_drift
+    - stale_task_queue
+
+  external:
+    - rate_limit
+    - upstream_api_failure
+    - package_registry_failure

@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0",
+  "comment": "Files that the agent must not silently delete, blank, or stub. See docs/verifier-integrity-policy.md.",
+  "paths": [
+    "scripts/verify.sh",
+    "scripts/verify/00-env.sh",
+    "scripts/verify/10-format.sh",
+    "scripts/verify/20-typecheck.sh",
+    "scripts/verify/30-unit.sh",
+    "scripts/verify/40-crud-coverage.sh",
+    "scripts/verify/50-module-boundaries.sh",
+    "scripts/verify/60-task-queue.sh",
+    "scripts/verify/99-integrity.sh",
+    "docs/risk-policy.md",
+    "docs/verifier-integrity-policy.md",
+    "docs/human-gates.md",
+    ".agent/protected-files.json"
+  ]
+}

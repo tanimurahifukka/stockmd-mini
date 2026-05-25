@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "title": "sandbox-event",
+  "type": "object",
+  "required": ["schema_version", "event_id", "ts", "event"],
+  "properties": {
+    "schema_version": {"type": "string"},
+    "event_id": {"type": "string"},
+    "ts": {"type": "string"},
+    "project": {"type": ["string", "null"]},
+    "event": {
+      "type": "string",
+      "enum": [
+        "sandbox_up",
+        "sandbox_down",
+        "sandbox_reset",
+        "sandbox_unhealthy",
+        "sandbox_healthy",
+        "doctor_failed"
+      ]
+    },
+    "exit_code": {"type": ["integer", "null"]},
+    "category": {"type": "string"},
+    "subcategory": {"type": "string"},
+    "message": {"type": "string"},
+    "privacy": {
+      "type": "object",
+      "properties": {
+        "contains_secret": {"type": "boolean"},
+        "contains_user_data": {"type": "boolean"},
+        "redaction_applied": {"type": "boolean"}
+      }
+    }
+  }
+}

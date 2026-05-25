@@ -1,0 +1,301 @@
+{
+  "schema_version": "1.0",
+  "project": "stockmd-mini",
+  "tasks": [
+    {
+      "id": "TASK-001",
+      "title": "Read CLAUDE.md, AGENTS.md, spec.md, resources.md",
+      "module": null,
+      "resource": null,
+      "operation": null,
+      "status": "pending",
+      "depends_on": []
+    },
+    {
+      "id": "TASK-002",
+      "title": "Run scripts/sandbox/up.sh and confirm a green verifier baseline",
+      "module": null,
+      "resource": null,
+      "operation": null,
+      "status": "pending",
+      "depends_on": [
+        "TASK-001"
+      ]
+    },
+    {
+      "id": "TASK-003",
+      "title": "Implement create for `stocks`",
+      "module": "stocks",
+      "resource": "stocks",
+      "operation": "create",
+      "status": "pending",
+      "depends_on": [
+        "TASK-002"
+      ]
+    },
+    {
+      "id": "TASK-004",
+      "title": "Implement list for `stocks`",
+      "module": "stocks",
+      "resource": "stocks",
+      "operation": "list",
+      "status": "pending",
+      "depends_on": [
+        "TASK-002"
+      ]
+    },
+    {
+      "id": "TASK-005",
+      "title": "Implement read for `stocks`",
+      "module": "stocks",
+      "resource": "stocks",
+      "operation": "read",
+      "status": "pending",
+      "depends_on": [
+        "TASK-002"
+      ]
+    },
+    {
+      "id": "TASK-006",
+      "title": "Implement update for `stocks`",
+      "module": "stocks",
+      "resource": "stocks",
+      "operation": "update",
+      "status": "pending",
+      "depends_on": [
+        "TASK-002"
+      ]
+    },
+    {
+      "id": "TASK-007",
+      "title": "Implement delete for `stocks`",
+      "module": "stocks",
+      "resource": "stocks",
+      "operation": "delete",
+      "status": "pending",
+      "depends_on": [
+        "TASK-002"
+      ]
+    },
+    {
+      "id": "TASK-008",
+      "title": "Implement create for `lots`",
+      "module": "lots",
+      "resource": "lots",
+      "operation": "create",
+      "status": "pending",
+      "depends_on": [
+        "TASK-002"
+      ]
+    },
+    {
+      "id": "TASK-009",
+      "title": "Implement list for `lots`",
+      "module": "lots",
+      "resource": "lots",
+      "operation": "list",
+      "status": "pending",
+      "depends_on": [
+        "TASK-002"
+      ]
+    },
+    {
+      "id": "TASK-010",
+      "title": "Implement read for `lots`",
+      "module": "lots",
+      "resource": "lots",
+      "operation": "read",
+      "status": "pending",
+      "depends_on": [
+        "TASK-002"
+      ]
+    },
+    {
+      "id": "TASK-011",
+      "title": "Implement update for `lots`",
+      "module": "lots",
+      "resource": "lots",
+      "operation": "update",
+      "status": "pending",
+      "depends_on": [
+        "TASK-002"
+      ]
+    },
+    {
+      "id": "TASK-012",
+      "title": "Implement delete for `lots`",
+      "module": "lots",
+      "resource": "lots",
+      "operation": "delete",
+      "status": "pending",
+      "depends_on": [
+        "TASK-002"
+      ]
+    },
+    {
+      "id": "TASK-013",
+      "title": "Implement create for `suppliers`",
+      "module": "suppliers",
+      "resource": "suppliers",
+      "operation": "create",
+      "status": "pending",
+      "depends_on": [
+        "TASK-002"
+      ]
+    },
+    {
+      "id": "TASK-014",
+      "title": "Implement list for `suppliers`",
+      "module": "suppliers",
+      "resource": "suppliers",
+      "operation": "list",
+      "status": "pending",
+      "depends_on": [
+        "TASK-002"
+      ]
+    },
+    {
+      "id": "TASK-015",
+      "title": "Implement read for `suppliers`",
+      "module": "suppliers",
+      "resource": "suppliers",
+      "operation": "read",
+      "status": "pending",
+      "depends_on": [
+        "TASK-002"
+      ]
+    },
+    {
+      "id": "TASK-016",
+      "title": "Implement update for `suppliers`",
+      "module": "suppliers",
+      "resource": "suppliers",
+      "operation": "update",
+      "status": "pending",
+      "depends_on": [
+        "TASK-002"
+      ]
+    },
+    {
+      "id": "TASK-017",
+      "title": "Implement delete for `suppliers`",
+      "module": "suppliers",
+      "resource": "suppliers",
+      "operation": "delete",
+      "status": "pending",
+      "depends_on": [
+        "TASK-002"
+      ]
+    },
+    {
+      "id": "TASK-018",
+      "title": "Implement create for `purchase_orders`",
+      "module": "purchase_orders",
+      "resource": "purchase_orders",
+      "operation": "create",
+      "status": "pending",
+      "depends_on": [
+        "TASK-002"
+      ]
+    },
+    {
+      "id": "TASK-019",
+      "title": "Implement list for `purchase_orders`",
+      "module": "purchase_orders",
+      "resource": "purchase_orders",
+      "operation": "list",
+      "status": "pending",
+      "depends_on": [
+        "TASK-002"
+      ]
+    },
+    {
+      "id": "TASK-020",
+      "title": "Implement read for `purchase_orders`",
+      "module": "purchase_orders",
+      "resource": "purchase_orders",
+      "operation": "read",
+      "status": "pending",
+      "depends_on": [
+        "TASK-002"
+      ]
+    },
+    {
+      "id": "TASK-021",
+      "title": "Implement update for `purchase_orders`",
+      "module": "purchase_orders",
+      "resource": "purchase_orders",
+      "operation": "update",
+      "status": "pending",
+      "depends_on": [
+        "TASK-002"
+      ]
+    },
+    {
+      "id": "TASK-022",
+      "title": "Implement delete for `purchase_orders`",
+      "module": "purchase_orders",
+      "resource": "purchase_orders",
+      "operation": "delete",
+      "status": "pending",
+      "depends_on": [
+        "TASK-002"
+      ]
+    },
+    {
+      "id": "TASK-023",
+      "title": "Implement create for `nfc_tags`",
+      "module": "nfc_tags",
+      "resource": "nfc_tags",
+      "operation": "create",
+      "status": "pending",
+      "depends_on": [
+        "TASK-002"
+      ]
+    },
+    {
+      "id": "TASK-024",
+      "title": "Implement list for `nfc_tags`",
+      "module": "nfc_tags",
+      "resource": "nfc_tags",
+      "operation": "list",
+      "status": "pending",
+      "depends_on": [
+        "TASK-002"
+      ]
+    },
+    {
+      "id": "TASK-025",
+      "title": "Implement read for `nfc_tags`",
+      "module": "nfc_tags",
+      "resource": "nfc_tags",
+      "operation": "read",
+      "status": "pending",
+      "depends_on": [
+        "TASK-002"
+      ]
+    },
+    {
+      "id": "TASK-026",
+      "title": "Implement update for `nfc_tags`",
+      "module": "nfc_tags",
+      "resource": "nfc_tags",
+      "operation": "update",
+      "status": "pending",
+      "depends_on": [
+        "TASK-002"
+      ]
+    },
+    {
+      "id": "TASK-027",
+      "title": "Implement delete for `nfc_tags`",
+      "module": "nfc_tags",
+      "resource": "nfc_tags",
+      "operation": "delete",
+      "status": "pending",
+      "depends_on": [
+        "TASK-002"
+      ]
+    }
+  ]
+}

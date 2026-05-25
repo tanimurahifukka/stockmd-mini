@@ -1,0 +1,11 @@
+{
+  "schema_version": "1.0",
+  "project": "stockmd-mini",
+  "sandbox": {
+    "status": "unknown",
+    "provider": "unknown",
+    "services": [],
+    "last_healthcheck": null,
+    "last_event_id": null
+  }
+}

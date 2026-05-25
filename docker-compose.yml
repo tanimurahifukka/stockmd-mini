@@ -1,0 +1,26 @@
+# docker-compose — stockmd-mini
+# Local-only sandbox. Bind to 127.0.0.1 explicitly; never 0.0.0.0.
+# When the stack is nextjs-supabase, the Supabase services come from the
+# `supabase` CLI ( `supabase start` ), not from this compose file.
+
+services:
+  app:
+    build: .
+    container_name: stockmd-mini-app
+    ports:
+      - "127.0.0.1:3000:3000"
+    volumes:
+      - ./:/app
+      - app-node-modules:/app/node_modules
+    environment:
+      - NODE_ENV=development
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://127.0.0.1:3000/api/health || exit 1"]
+      interval: 10s
+      timeout: 3s
+      retries: 6
+      start_period: 30s
+
+volumes:
+  app-node-modules: {}
+
