@@ -28,8 +28,8 @@ When you add a resource, also:
 | name | purpose | operations | deletion | ownership | pii |
 |------|---------|------------|----------|-----------|-----|
 | `stocks` | A physical inventory item type (the SKU level; quantities at the lot level live in `lots`). | create,list,read,update,delete | soft | system | no |
-| `lots` | TODO: describe `lots` | create,list,read,update,delete | soft | system | no |
-| `suppliers` | TODO: describe `suppliers` | create,list,read,update,delete | soft | system | no |
-| `purchase_orders` | TODO: describe `purchase_orders` | create,list,read,update,delete | soft | system | no |
-| `nfc_tags` | TODO: describe `nfc_tags` | create,list,read,update,delete | soft | system | no |
+| `lots` | A per-batch receipt of a `stocks` item (stock_id, lot_code unique per stock, quantity, expiry_at, location, received_at). | create,list,read,update,delete | soft | system | no |
+| `suppliers` | A vendor that provides one or more `stocks` (name, contact_email, contact_phone, address, notes). | create,list,read,update,delete | soft | system | no |
+| `purchase_orders` | A header-level record of an order placed with a supplier (supplier_id, ordered_at, expected_at, status, total_amount, currency, notes). Line items are out of scope for v1.1. | create,list,read,update,delete | soft | system | no |
+| `nfc_tags` | A physical NFC tag with a unique UID, optionally bound to a `lot_id` or `stock_id`. | create,list,read,update,delete | soft | system | no |
 

@@ -1,12 +1,12 @@
 import { NextResponse } from "next/server";
-import { createStock, listStocks } from "@/modules/stocks";
+import { createSupplier, listSuppliers } from "@/modules/suppliers";
 import { parseListQuery } from "@/lib/query";
 
 export const dynamic = "force-dynamic";
 
 export async function GET(req: Request) {
   const q = parseListQuery(new URL(req.url));
-  const r = await listStocks(q);
+  const r = await listSuppliers(q);
   if (!r.ok) {
     return NextResponse.json(
       { error: "internal_error", message: r.error.kind === "internal" ? r.error.message : "?" },
@@ -26,32 +26,25 @@ export async function POST(req: Request) {
       { status: 400 },
     );
   }
-
-  const result = await createStock(raw);
-  if (!result.ok) {
-    switch (result.error.kind) {
+  const r = await createSupplier(raw);
+  if (!r.ok) {
+    switch (r.error.kind) {
       case "validation":
         return NextResponse.json(
-          { error: "validation_failed", details: result.error.errors },
+          { error: "validation_failed", details: r.error.errors },
           { status: 400 },
         );
-      case "duplicate_sku":
+      case "duplicate_slug":
         return NextResponse.json(
-          { error: "duplicate_sku", message: result.error.message },
+          { error: "duplicate_slug", message: r.error.message },
           { status: 409 },
         );
-      case "not_found":
+      default:
         return NextResponse.json(
-          { error: "not_found", message: result.error.message },
-          { status: 404 },
-        );
-      case "internal":
-        return NextResponse.json(
-          { error: "internal_error", message: result.error.message },
+          { error: "internal_error", message: r.error.message },
           { status: 500 },
         );
     }
   }
-
-  return NextResponse.json({ stock: result.value }, { status: 201 });
+  return NextResponse.json({ supplier: r.value }, { status: 201 });
 }

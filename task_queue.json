@@ -8,7 +8,7 @@
       "module": null,
       "resource": null,
       "operation": null,
-      "status": "pending",
+      "status": "completed",
       "depends_on": []
     },
     {
@@ -17,7 +17,7 @@
       "module": null,
       "resource": null,
       "operation": null,
-      "status": "pending",
+      "status": "completed",
       "depends_on": [
         "TASK-001"
       ]
@@ -39,7 +39,7 @@
       "module": "stocks",
       "resource": "stocks",
       "operation": "list",
-      "status": "pending",
+      "status": "completed",
       "depends_on": [
         "TASK-002"
       ]
@@ -50,7 +50,7 @@
       "module": "stocks",
       "resource": "stocks",
       "operation": "read",
-      "status": "pending",
+      "status": "completed",
       "depends_on": [
         "TASK-002"
       ]
@@ -61,7 +61,7 @@
       "module": "stocks",
       "resource": "stocks",
       "operation": "update",
-      "status": "pending",
+      "status": "completed",
       "depends_on": [
         "TASK-002"
       ]
@@ -72,7 +72,7 @@
       "module": "stocks",
       "resource": "stocks",
       "operation": "delete",
-      "status": "pending",
+      "status": "completed",
       "depends_on": [
         "TASK-002"
       ]
@@ -83,7 +83,7 @@
       "module": "lots",
       "resource": "lots",
       "operation": "create",
-      "status": "pending",
+      "status": "completed",
       "depends_on": [
         "TASK-002"
       ]
@@ -94,7 +94,7 @@
       "module": "lots",
       "resource": "lots",
       "operation": "list",
-      "status": "pending",
+      "status": "completed",
       "depends_on": [
         "TASK-002"
       ]
@@ -105,7 +105,7 @@
       "module": "lots",
       "resource": "lots",
       "operation": "read",
-      "status": "pending",
+      "status": "completed",
       "depends_on": [
         "TASK-002"
       ]
@@ -116,7 +116,7 @@
       "module": "lots",
       "resource": "lots",
       "operation": "update",
-      "status": "pending",
+      "status": "completed",
       "depends_on": [
         "TASK-002"
       ]
@@ -127,7 +127,7 @@
       "module": "lots",
       "resource": "lots",
       "operation": "delete",
-      "status": "pending",
+      "status": "completed",
       "depends_on": [
         "TASK-002"
       ]
@@ -138,7 +138,7 @@
       "module": "suppliers",
       "resource": "suppliers",
       "operation": "create",
-      "status": "pending",
+      "status": "completed",
       "depends_on": [
         "TASK-002"
       ]
@@ -149,7 +149,7 @@
       "module": "suppliers",
       "resource": "suppliers",
       "operation": "list",
-      "status": "pending",
+      "status": "completed",
       "depends_on": [
         "TASK-002"
       ]
@@ -160,7 +160,7 @@
       "module": "suppliers",
       "resource": "suppliers",
       "operation": "read",
-      "status": "pending",
+      "status": "completed",
       "depends_on": [
         "TASK-002"
       ]
@@ -171,7 +171,7 @@
       "module": "suppliers",
       "resource": "suppliers",
       "operation": "update",
-      "status": "pending",
+      "status": "completed",
       "depends_on": [
         "TASK-002"
       ]
@@ -182,7 +182,7 @@
       "module": "suppliers",
       "resource": "suppliers",
       "operation": "delete",
-      "status": "pending",
+      "status": "completed",
       "depends_on": [
         "TASK-002"
       ]
@@ -193,7 +193,7 @@
       "module": "purchase_orders",
       "resource": "purchase_orders",
       "operation": "create",
-      "status": "pending",
+      "status": "completed",
       "depends_on": [
         "TASK-002"
       ]
@@ -204,7 +204,7 @@
       "module": "purchase_orders",
       "resource": "purchase_orders",
       "operation": "list",
-      "status": "pending",
+      "status": "completed",
       "depends_on": [
         "TASK-002"
       ]
@@ -215,7 +215,7 @@
       "module": "purchase_orders",
       "resource": "purchase_orders",
       "operation": "read",
-      "status": "pending",
+      "status": "completed",
       "depends_on": [
         "TASK-002"
       ]
@@ -226,7 +226,7 @@
       "module": "purchase_orders",
       "resource": "purchase_orders",
       "operation": "update",
-      "status": "pending",
+      "status": "completed",
       "depends_on": [
         "TASK-002"
       ]
@@ -237,7 +237,7 @@
       "module": "purchase_orders",
       "resource": "purchase_orders",
       "operation": "delete",
-      "status": "pending",
+      "status": "completed",
       "depends_on": [
         "TASK-002"
       ]
@@ -248,7 +248,7 @@
       "module": "nfc_tags",
       "resource": "nfc_tags",
       "operation": "create",
-      "status": "pending",
+      "status": "completed",
       "depends_on": [
         "TASK-002"
       ]
@@ -259,7 +259,7 @@
       "module": "nfc_tags",
       "resource": "nfc_tags",
       "operation": "list",
-      "status": "pending",
+      "status": "completed",
       "depends_on": [
         "TASK-002"
       ]
@@ -270,7 +270,7 @@
       "module": "nfc_tags",
       "resource": "nfc_tags",
       "operation": "read",
-      "status": "pending",
+      "status": "completed",
       "depends_on": [
         "TASK-002"
       ]
@@ -281,7 +281,7 @@
       "module": "nfc_tags",
       "resource": "nfc_tags",
       "operation": "update",
-      "status": "pending",
+      "status": "completed",
       "depends_on": [
         "TASK-002"
       ]
@@ -292,7 +292,7 @@
       "module": "nfc_tags",
       "resource": "nfc_tags",
       "operation": "delete",
-      "status": "pending",
+      "status": "completed",
       "depends_on": [
         "TASK-002"
       ]

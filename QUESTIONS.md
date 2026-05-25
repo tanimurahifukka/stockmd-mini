@@ -21,6 +21,10 @@ to add a question linked to the current event.
   Context: Spec was silent on stocks fields. Chose a minimal SKU-level schema to unblock TASK-003 (create). Migration: supabase/migrations/20260525000001_create_stocks.sql.
   Blocking: no
   Linked event: TASK-003
+- [ ] [TASK-008] Confirm or refine lots schema: stock_id FK, lot_code, quantity numeric, expiry_at date, location, received_at. Should quantity allow negative for adjustments? Should we constrain lot_code uniqueness per stock_id or globally?
+  Context: Spec was silent. Chose: lot_code unique per stock_id; quantity numeric(12,2) default 0; expiry_at nullable date; received_at default now().
+  Blocking: no
+  Linked event: TASK-008
 ## Closed
 
 (append answered questions here with the resolution date and answer)

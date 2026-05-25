@@ -72,3 +72,47 @@ At task end (stop):
   - `connection_failure`: server-side Supabase client used 127.0.0.1
     inside the container; needed `SUPABASE_URL_SERVER=http://host.docker.internal:54321`.
     Lesson upstreamable to `agent-harness-stack-nextjs`.
+
+- 2026-05-25 — TASK-004..007 (success): `stocks` list/read/update/delete.
+
+  Added `validateUpdate`, repo `listStocks/getStock/updateStock/softDeleteStock`,
+  GET on `/api/stocks`, full `[id]/route.ts` with GET/PATCH/DELETE.
+
+  Two RLS lessons logged (both upstreamable):
+  1. `missing_auth_policy` — INSERT/SELECT-only policies meant PATCH and
+     DELETE silently returned 0 rows → 404. Added UPDATE policy.
+  2. `inconsistent_docs` — SELECT policy `using (deleted_at is null)`
+     blocked the RETURNING clause of soft-delete UPDATE → "new row violates
+     RLS". Made SELECT open; filtering is the service's job.
+
+  Migrations: `20260525000002_stocks_update_delete_policies.sql`,
+              `20260525000003_stocks_select_all_rows.sql`.
+
+- 2026-05-25 — TASK-008..012 (success): `lots` full CRUDL.
+
+  Migration `20260525000010_create_lots.sql` ships table + UNIQUE(stock_id, lot_code)
+  + 3 indexes + RLS with all four policies in one go (lesson from TASK-006 applied).
+  FK → stocks(id) ON DELETE RESTRICT. Postgres 23503 mapped to 422 `missing_stock`.
+
+- 2026-05-25 — TASK-013..017 (success): `suppliers` full CRUDL.
+
+  Pattern is stable: types/schema/repo/service/index + route + [id]/route.ts.
+  Slug uniqueness with `^[a-z0-9](?:[a-z0-9-]{0,62}[a-z0-9])?$` regex.
+  Email validation via a permissive `@.` shape check.
+
+- 2026-05-25 — TASK-018..022 (success): `purchase_orders` full CRUDL.
+
+  Status as `text` + `CHECK (status in (...))` for db enforcement plus a
+  TypeScript literal type for compile-time enforcement. Two layers of defense.
+  FK → suppliers(id) ON DELETE RESTRICT; currency normalized to upper-case.
+
+- 2026-05-25 — TASK-023..027 (success): `nfc_tags` full CRUDL.
+
+  Optional bind to lot OR stock (mutex enforced by Postgres CHECK + service
+  validation). UID normalized at validation time (strip `:`, `-`, whitespace;
+  upper-case) so duplicate detection works regardless of input format.
+
+- 2026-05-25 — Final consolidation: `tests/api-smoke.sh` added (33 assertions
+  across all 5 resources). `verify.sh` green in strict mode. README written.
+  27/27 task_queue.json tasks marked completed. Five Phase-0/1 lessons
+  upstreamed to agent-harness-skills (v1.1.1, v1.1.2, v1.1.3).
