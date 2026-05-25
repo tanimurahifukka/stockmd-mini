@@ -15,9 +15,16 @@ services:
     environment:
       - NODE_ENV=development
     healthcheck:
-      test: ["CMD-SHELL", "wget -qO- http://127.0.0.1:3000/api/health || exit 1"]
+      # node:20-bookworm-slim ships without wget/curl, so use Node's built-in
+      # fetch (Node 18+). Exits 0 only on HTTP 2xx from /api/health.
+      test:
+        - "CMD-SHELL"
+        - >-
+          node -e "fetch('http://127.0.0.1:3000/api/health')
+          .then(r => process.exit(r.ok ? 0 : 1))
+          .catch(() => process.exit(1))"
       interval: 10s
-      timeout: 3s
+      timeout: 5s
       retries: 6
       start_period: 30s
 

@@ -2,10 +2,16 @@
   "schema_version": "1.0",
   "project": "stockmd-mini",
   "sandbox": {
-    "status": "unknown",
-    "provider": "unknown",
-    "services": [],
-    "last_healthcheck": null,
-    "last_event_id": null
+    "status": "healthy",
+    "provider": "docker-desktop",
+    "services": [
+      {
+        "name": "app",
+        "status": "running",
+        "health": "healthy",
+        "port": 3000
+      }
+    ],
+    "last_healthcheck": "2026-05-25T10:52:10+09:00"
   }
 }

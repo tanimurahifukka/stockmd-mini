@@ -76,9 +76,15 @@ if [ "$wait" -eq 1 ]; then
     sleep 3
   done
 else
-  if check_once; then
+  # Important: `if check_once; then ... fi` resets $? to 0 even when the
+  # test failed, so we capture the return code BEFORE the conditional.
+  set +e
+  check_once
+  rc=$?
+  set -e
+  if [ "$rc" -eq 0 ]; then
     say "healthy"
     exit 0
   fi
-  exit $?
+  exit "$rc"
 fi
