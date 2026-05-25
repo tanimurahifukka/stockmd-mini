@@ -27,7 +27,7 @@ When you add a resource, also:
 
 | name | purpose | operations | deletion | ownership | pii |
 |------|---------|------------|----------|-----------|-----|
-| `stocks` | TODO: describe `stocks` | create,list,read,update,delete | soft | system | no |
+| `stocks` | A physical inventory item type (the SKU level; quantities at the lot level live in `lots`). | create,list,read,update,delete | soft | system | no |
 | `lots` | TODO: describe `lots` | create,list,read,update,delete | soft | system | no |
 | `suppliers` | TODO: describe `suppliers` | create,list,read,update,delete | soft | system | no |
 | `purchase_orders` | TODO: describe `purchase_orders` | create,list,read,update,delete | soft | system | no |

@@ -1,6 +1,6 @@
 # Recent Lessons — stockmd-mini
 
-Generated: 2026-05-25T10:53:10+09:00
+Generated: 2026-05-25T11:06:01+09:00
 Project: stockmd-mini
 
 ## Session caution
@@ -15,6 +15,8 @@ No recurring patterns yet. Proceed normally.
 
 | Time | Task | Category | Lesson |
 |------|------|----------|--------|
+| 2026-05-25 11:06:01 | TASK-003 | specification/spec_ambiguity | resources.md only declared meta (deletion, ownership, pii) for stocks; field sc… |
+| 2026-05-25 11:06:01 | TASK-003 | environment/connection_failure | Server-side Supabase client used [REDACTED] (127.0.0.1) inside the container; 1… |
 | 2026-05-25 10:53:05 | TASK-002 | verifier/verifier_integrity_failure | healthcheck.sh non-wait branch returned exit 0 even when check_once returned 60… |
 | 2026-05-25 10:53:05 | TASK-002 | environment/app_health_failed | docker-compose healthcheck used wget, which is not present in node:20-bookworm-… |
 | 2026-05-25 10:53:04 | TASK-002 | environment/docker_daemon_down | OrbStack daemon was not running on first up.sh attempt; doctor.sh fail (exit 10… |
@@ -24,8 +26,9 @@ No recurring patterns yet. Proceed normally.
 
 | Time | Task | Pattern |
 |------|------|---------|
+| 2026-05-25 11:06:01 | TASK-003 | Wrote the migration first, then the module skeleton (types/schema/repo/service/… |
 | 2026-05-25 10:53:05 | TASK-002 | Phase 0 brought up cleanly on second attempt after 4 deterministic fixes (orb s… |
 
 ## Open questions
 
-(none — see `QUESTIONS.md`.)
+- [ ] [TASK-003] Confirm or refine the stocks schema chosen for TASK-003 (sku, name, unit, default_location, notes; quantities live in lots). Should there be a category_id, brand, supplier_id, manufacturer_code?

@@ -50,3 +50,25 @@ At task end (stop):
      built-in `fetch` for the compose healthcheck command.
 
   Lessons 3 and 4 were upstreamed to `agent-harness-skills`.
+
+- 2026-05-25 — TASK-003 (success): `create` for `stocks`.
+
+  Resource shape decision (logged as project lesson + QUESTIONS.md entry):
+  minimal SKU-level table — `id uuid pk, sku text unique, name text,
+  unit text default 'piece', default_location text, notes text,
+  created_at, updated_at, deleted_at` (soft delete). RLS on, open
+  policies for anon as Phase 1 MVP (to tighten when auth lands).
+
+  Migration: `supabase/migrations/20260525000001_create_stocks.sql`.
+  Module:    `src/modules/stocks/{types,schema,repo,service,index}.ts`
+             via `src/lib/supabase/server.ts`.
+  Route:     `POST /api/stocks` → 201 / 400 / 409 / 500.
+
+  Verified end-to-end: 201 happy, 409 duplicate sku, 400 validation,
+  400 invalid_json. `pnpm typecheck` clean inside container.
+  `verify.sh` passes in strict mode (`VERIFY_REQUIRE_SANDBOX=1`).
+
+  One new Phase 1 quirk surfaced and patched in-repo (event logged):
+  - `connection_failure`: server-side Supabase client used 127.0.0.1
+    inside the container; needed `SUPABASE_URL_SERVER=http://host.docker.internal:54321`.
+    Lesson upstreamable to `agent-harness-stack-nextjs`.

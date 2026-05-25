@@ -28,7 +28,7 @@
       "module": "stocks",
       "resource": "stocks",
       "operation": "create",
-      "status": "pending",
+      "status": "completed",
       "depends_on": [
         "TASK-002"
       ]
