@@ -43,8 +43,18 @@ bash tests/api-smoke.sh
 
 # Deterministic verifier (strict by default — needs sandbox healthy)
 bash scripts/verify.sh
-# Or offline:
+
+# Offline (e.g. on CI without Docker):
 VERIFY_REQUIRE_SANDBOX=0 bash scripts/verify.sh
+
+# Full verifier with live API smoke (requires sandbox up):
+VERIFY_LIVE_API=1 bash scripts/verify.sh
+
+# Tunable env vars for verify.sh:
+#   VERIFY_REQUIRE_SANDBOX=1   sandbox-state.json must be "healthy" (default)
+#   VERIFY_REQUIRE_ROUTES=1    every resource must have route.ts + [id]/route.ts
+#                              with GET/POST/PATCH/DELETE handlers (default)
+#   VERIFY_LIVE_API=1          70-api-smoke.sh runs tests/api-smoke.sh (default: 0)
 ```
 
 ## Layout

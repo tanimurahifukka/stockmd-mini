@@ -63,7 +63,9 @@ expect_status "$(code_of "$r")" "201" "POST /api/purchase-orders"
 PO_ID=$(echo "$(body_of "$r")" | python3 -c "import json,sys;print(json.load(sys.stdin)['purchase_order']['id'])")
 
 echo "== nfc_tags =="
-TAG_UID="04AABBCCDDEE${ts: -2}"
+# Build a 14-hex UID with enough entropy that re-runs in the same minute do
+# not collide on the unique constraint (ts ^ pid -> hex).
+TAG_UID=$(printf "04AABBCC%010X" "$(( (ts ^ $$) & 0xFFFFFFFFFF ))")
 r=$(call POST /api/nfc-tags "{\"uid\":\"$TAG_UID\"}")
 expect_status "$(code_of "$r")" "201" "POST /api/nfc-tags"
 TAG_ID=$(echo "$(body_of "$r")" | python3 -c "import json,sys;print(json.load(sys.stdin)['nfc_tag']['id'])")

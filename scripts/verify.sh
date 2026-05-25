@@ -13,6 +13,7 @@ checks=(
   scripts/verify/40-crud-coverage.sh
   scripts/verify/50-module-boundaries.sh
   scripts/verify/60-task-queue.sh
+  scripts/verify/70-api-smoke.sh
   scripts/verify/99-integrity.sh
 )
 

@@ -1,6 +1,6 @@
 # Recent Lessons — stockmd-mini
 
-Generated: 2026-05-25T11:35:52+09:00
+Generated: 2026-05-25T12:12:50+09:00
 Project: stockmd-mini
 
 ## Session caution
@@ -15,6 +15,7 @@ No recurring patterns yet. Proceed normally.
 
 | Time | Task | Category | Lesson |
 |------|------|----------|--------|
+| 2026-05-25 12:12:50 | TASK-027 | verifier/test_failure | api-smoke's nfc UID generator only used the last 2 chars of $ts, so re-runs in … |
 | 2026-05-25 11:18:15 | TASK-006 | specification/missing_auth_policy | RLS UPDATE/DELETE policies were missing; PATCH and DELETE silently returned 0 r… |
 | 2026-05-25 11:18:15 | TASK-007 | specification/inconsistent_docs | Soft-delete via UPDATE deleted_at=now() conflicted with a SELECT policy that hi… |
 | 2026-05-25 11:06:01 | TASK-003 | specification/spec_ambiguity | resources.md only declared meta (deletion, ownership, pii) for stocks; field sc… |
@@ -28,6 +29,7 @@ No recurring patterns yet. Proceed normally.
 
 | Time | Task | Pattern |
 |------|------|---------|
+| 2026-05-25 12:12:50 | TASK-027 | Verifier strengthened from spec-consistency to implementation-existence (route … |
 | 2026-05-25 11:32:24 | TASK-027 | uid normalization (strip :,-, whitespace; uppercase) happens once in validation… |
 | 2026-05-25 11:29:10 | TASK-022 | Status as text + CHECK constraint stays out of the type system but in the datab… |
 | 2026-05-25 11:25:31 | TASK-017 | Pattern stabilizing — copy lots, swap field names, swap unique key (slug not lo… |
